@@ -7,8 +7,16 @@ class Card extends React.Component {
 		this.state = {
 			showDetails: false
 		};
+		
+		this.clickHandler = this.clickHandler.bind(this);
 	}
 
+	clickHandler() {
+		this.setState({
+			showDetails: !this.state.showDetails
+		});
+	};
+	
 	render() {
 		let cardDetails;
 			if (this.state.showDetails) {
@@ -22,9 +30,9 @@ class Card extends React.Component {
 
 		return (
 			<div className='card'>
-				<div className='card__title' onClick={
-					()=>this.setState({showDetails: !this.state.showDetails})
-				}>{this.props.title}</div>
+				<div className='card__title' onClick={this.clickHandler}>
+					{this.props.title}
+				</div>
 				{cardDetails}
 			</div>
 		);
