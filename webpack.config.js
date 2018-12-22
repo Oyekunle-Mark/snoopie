@@ -12,6 +12,12 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.jsx?$/,
+			include: [
+				path.resolve(__dirname, 'source')
+			],
+			exclude: [
+				path.resolve(__dirname, 'node_modules')
+			],
 			loader: 'babel-loader',
 			options: {
 				presets: ['es2015', 'react']
