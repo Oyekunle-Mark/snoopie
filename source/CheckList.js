@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class CheckList extends React.Component {
 	render() {
@@ -16,6 +17,11 @@ class CheckList extends React.Component {
 			</div>
 		);
 	}
+}
+
+CheckList.propTypes = {
+    id: PropTypes.number,
+    tasts: PropTypes.string
 }
 
 export default CheckList;

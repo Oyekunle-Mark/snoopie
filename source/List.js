@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 class List extends React.Component {
 	render() {
 		var cards = this.props.cards.map((card, n) => {
 			return <Card 	key={n}
-					id={card.id}
+				    id={card.id}
 					title={card.title}
 					description={card.description}
 					tasks={card.tasks} />
@@ -18,6 +19,12 @@ class List extends React.Component {
 			</div>
 		);
 	}
+}
+                                         
+List.propTypes = {
+    id: PropTypes.string,
+    title: PropTypes.string,
+    cards: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default List;
